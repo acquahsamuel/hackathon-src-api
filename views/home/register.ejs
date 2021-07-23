@@ -1,0 +1,50 @@
+<%- include('includes/header') -%>
+
+<h2 class="heading__h2 text-center">Register Account</h2>
+<div class="tab">
+  <ul class="tab__links">
+    <li class="tab__list">
+      <a class="tab__link active" href=""> UserID/Email</a>
+    </li>
+    <li class="tab__list">
+      <a class="tab__link" href=""> Phone Number </a>
+    </li>
+  </ul>
+</div>
+
+<div class="form">
+  <form action="/signup" class="form__card" method="post">
+    <div class="form__group">
+      <input
+        type="text"
+        class="form__input"
+        placeholder="Student ID"
+      />
+    </div>
+
+    <div class="form__group">
+      <input type="text" class="form__input" placeholder="First Name" />
+    </div>
+
+    <div class="form__group">
+        <input type="text" class="form__input" placeholder="Last Name" />
+      </div>
+
+      <div class="form__group">
+        <input type="password" class="form__input" placeholder="Password " />
+      </div>
+
+      <!-- <a href="/admin/dashboard" class="btn btn--danger"> Log In </a> -->
+      <button class="btn btn--danger form__link" type="submit">  Register  </button>
+
+
+    <div class="form__links">
+      <a class="form__link" href="/login"> Login </a>
+    </div>
+  </form>
+</div>
+
+<%- include('includes/footer') -%>
+
+
+

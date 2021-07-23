@@ -1,0 +1,47 @@
+<%- include('includes/header') -%>
+
+<h2 class="heading__h2 text-center"> Login Account </h2>
+<div class="tab">
+  <ul class="tab__links">
+    <li class="tab__list">
+      <a class="tab__link active" href=""> UserID/Email</a>
+    </li>
+    <li class="tab__list">
+      <a class="tab__link" href=""> Phone Number </a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="form">
+  <form action="/login" class="form__card" method="post">
+    <div class="form__group">
+      <input
+        type="text"
+        class="form__input"
+        placeholder="Student ID"
+      />
+    </div>
+
+    <div class="form__group">
+      <input type="password" class="form__input" placeholder="Password" />
+    </div>
+
+    <div class="button">
+      <button class="btn btn--danger" type="submit">  Log In </button>
+    </div>
+
+    
+    <div class="button">
+      <!-- <a href="/admin/dashboard" class="btn btn--danger"> Log In </a> -->
+      <button class="" type="submit"></button>
+    </div>
+
+   
+  </form>
+</div>
+
+<%- include('includes/footer') -%>
+
+
+
