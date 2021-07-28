@@ -1,0 +1,315 @@
+:root{
+  --header-height: 100px;
+  --sidebar-width: 250px;
+}
+  $primary-color: #e76021;
+  $white-color: #fff;
+  $grey-color: #ccc;
+  $dark-color: #131111f1;
+  $bg-color: #f4f4f4f4;
+  $faint-color: #6e6e6e;
+
+body{
+  background: $bg-color;
+  overflow: hidden;
+}
+
+p, small, 
+h1, h2, h3, h4, h5, h6
+ul,li, ol
+{
+  padding: 0;
+  margin: 0;
+}
+
+
+
+img{
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+.avatar{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  &-round{
+    @extend .avatar;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
+
+.icon{
+  font-size: 1.2rem;
+}
+
+.logo{
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 800;
+  a{
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &.active{
+    color: $primary-color;
+  }
+}
+
+
+
+@mixin Gutters {
+  @for $i from 1 to 4 {
+    .gap-#{$i}{
+      gap: #{$i}rem
+    }
+  }
+}
+@mixin Padding {
+  @for $i from 4 to 10 {
+    .px-#{$i}{
+      padding-left: #{$i}rem;
+      padding-right: #{$i}rem;
+    }
+    .py-#{$i}{
+      padding-top: #{$i}rem;
+      padding-bottom: #{$i}rem;
+    }
+  }
+}
+@mixin FontWeight {
+  @for $i from 1 to 9 {
+    .w{
+      &__#{$i}00{
+        font-weight: #{$i}#{'00'}
+      }
+    }
+  }
+}
+
+@include Padding();
+@include Gutters();
+@include FontWeight();
+
+
+
+// Header 
+
+header{
+  background: $primary-color;
+  color: $white-color;
+  height: var(--header-height);
+}
+
+
+// Components
+
+.text-multi{
+  font-size: 1.1rem;
+  
+  small{
+    font-weight: 800;
+    color: rgb(83, 60, 60);
+    font-size: .8rem;
+  }
+}
+
+.text{
+  &__primary{
+    color: $primary-color;
+  }
+  &__faint{
+    color: $faint-color;
+  }
+
+  &__line-through{
+    position: relative;
+    z-index: 5;
+    &::after{
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      content: '';
+      background-color:red;
+      top: 50%;
+      left: 0;
+      z-index: -2;
+    }
+    &::before{
+      width: 60%;
+      height: 100%;
+      position: absolute;
+      content: '';
+      background-color:$white-color;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+  }
+}
+
+
+
+.bg{
+  &__primary{
+    background-color: $primary-color;
+    color: $white-color;
+  }
+}
+
+.center-column{
+  display: flex;
+  flex-flow: column;
+  width: inherit;
+  justify-content: center;
+}
+
+.w-full{
+  width: 100%;
+}
+.card{
+  border-radius: .5rem;
+  box-sizing: border-box;
+  &__primary{
+    background-color: $primary-color;
+  }
+  &__holder{
+    position: relative;
+    top: -30px;
+    
+  }
+}
+
+.heading{
+  padding: 1rem 0;
+  font-size: 2rem;
+  font-weight: 800;
+  &::after{
+    position: relative;;
+  }
+}
+
+.btn{
+  transition: transform 200ms linear;
+  &:hover{
+    transform: scale(1.05);
+  }
+  &-gray{
+    background-color: lighten($color: #000000, $amount: 70);
+  }
+
+  &__primary{
+    background-color: $primary-color;
+    color:$white-color;
+
+    &:hover{
+      background-color: lighten($color: $primary-color, $amount: 10);
+      color: $white-color;
+    }
+  }
+}
+
+
+.main{
+  display: flex;
+  height: calc(100vh - var(--header-height));
+  &__sidebar{
+    width: var(--sidebar-width);
+    background-color: $white-color;
+    height: inherit;
+  }
+
+  &__body{
+    width: calc(100vw - var(--sidebar-width));
+    height: inherit;
+    overflow-y: scroll;
+  }
+}
+
+.custom-nav{
+  &__link{
+    position: relative;
+    z-index: 2;
+    transition: all 1000ms linear;
+    *{
+      cursor: pointer;
+    }
+    &:hover{
+     
+      &::after{
+        position: absolute;
+        content: '';
+        top:0;
+        left: -30px;
+        width: 30%;
+        border-bottom-right-radius: .5rem;
+        border-top-right-radius: .5rem;
+        height: 100%;
+        background-color: #131111f1;
+        z-index: -1;
+      
+      }
+
+      i{
+        color: $primary-color;
+        transform: scale(1.3);
+      }
+    }
+    a{
+      display: inline-block;
+      padding: .8rem 0;
+      color: $dark-color;
+      width: 100%;
+   
+      i{
+        padding-right: 1rem;
+        color: darken($color: $primary-color, $amount: 20);
+      }
+    }
+  }
+}
+
+
+
+// Accounts - Register & Login
+
+.account{
+  width: 100%;
+  height: 100vh;
+  // position: relative;
+  &-container{
+    width: 80vw;
+   
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .col-6{
+    
+    padding: 0 !important;
+  }
+
+  &__left{
+    width: 100%;
+    background-color: $white-color;
+    padding: 2rem;
+    height: 90vh;
+  }n
+  &__right{
+    width: 100%;
+    background: linear-gradient(40deg, $primary-color, darken($primary-color, 30));
+    padding: 2rem;
+    height: 90vh;
+  }
+
+  &__box{
+    width: 70%;
+  }
+}
+
