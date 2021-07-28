@@ -1,50 +1,66 @@
 <%- include('includes/header') -%>
 
-<h2 class="heading__h2 text-center">Register Account</h2>
-<div class="tab">
-  <ul class="tab__links">
-    <li class="tab__list">
-      <a class="tab__link active" href=""> UserID/Email</a>
-    </li>
-    <li class="tab__list">
-      <a class="tab__link" href=""> Phone Number </a>
-    </li>
-  </ul>
-</div>
-
-<div class="form">
-  <form action="/signup" class="form__card" method="post">
-    <div class="form__group">
-      <input
-        type="text"
-        class="form__input"
-        placeholder="Student ID"
-      />
-    </div>
-
-    <div class="form__group">
-      <input type="text" class="form__input" placeholder="First Name" />
-    </div>
-
-    <div class="form__group">
-        <input type="text" class="form__input" placeholder="Last Name" />
+  <section class="account shadow">
+    <div class="account-container">
+      <div class="row">
+        <div class="col-6">
+        <div class="account__left d-flex flex-column align-items-center justify-content-center">
+            <div class="account__box d-flex flex-column  gap-4">
+            
+              <div class="logo active">
+                <a href="" class="">
+                  <i class="fa fa-cube"></i>Sams
+                </a>
+              </div>
+            
+              <div class="d-flex flex-column gap-3">
+                <h3 class="w__800">Sign Up</h3>
+                <p class="text__faint small">
+                  See your growth and get consulting support!
+                </p>
+                <p class="text__line-through text-center">
+                  Create an account with us
+                </p>
+              </div><!-- /d-flex -->
+              <form action="" class="d-flex flex-column gap-2">
+                <div class="form-group">
+                  <label for="" class="form-label-important">Name</label>
+                  <input type="text" class='form-control'>
+                </div>
+                <div class="form-group">
+                  <label for="" class="form-label-important">Email</label>
+                  <input type="text" class='form-control'>
+                </div>
+                <div class="form-group">
+                  <label for="" class="form-label-important">Password</label>
+                  <input type="text" class='form-control'>
+                </div>
+                <div class="form-group">
+                  <label for="">
+                    <input type="checkbox" name="" id=""> 
+                    <small>
+                      I agree to the <span class="text__primary">
+                        Terms & Conditions
+                      </span>
+                    </small>
+                  </label>
+                </div>
+                <div class="d-flex flex-column gap-2">
+                  <button class="btn btn-block btn__primary">Sign Up</button>
+                  <small>Already have an Account? <ssmallan><a href="/login" class="text__primary">Sign in</a></span></small>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div><!-- /Col-6 -->
+        <div class="col-6">
+          <div class="account__right">
+  
+          </div>
+        </div>
       </div>
-
-      <div class="form__group">
-        <input type="password" class="form__input" placeholder="Password " />
-      </div>
-
-      <!-- <a href="/admin/dashboard" class="btn btn--danger"> Log In </a> -->
-      <button class="btn btn--danger form__link" type="submit">  Register  </button>
-
-
-    <div class="form__links">
-      <a class="form__link" href="/login"> Login </a>
     </div>
-  </form>
-</div>
-
-<%- include('includes/footer') -%>
+  </section>
 
 
-
+  <%- include('includes/footer') -%>

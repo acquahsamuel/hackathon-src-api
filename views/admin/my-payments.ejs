@@ -1,41 +1,100 @@
+
 <%- include('includes/header') -%>
 
-    <form class="form" action="/admin/my-payment" method="post">
-       <div class="">
-        <label for="department name"> Department </label>
-        <select name="" id="">
-            <option value=""> Department of Computer Science  </option>
-            <option value=""> Department of Biological Science </option>   
-        </select>
-       </div>
 
+<header class="header shadow py-4">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="logo">
+        <a href="" class="">
+          <i class="fa fa-cube"></i>Sams
+        </a>
+      </div>
+      <div class="header__right d-flex align-items-center gap-2">
+        <div class="icon">
+          <i class="fa fa-th-large"></i>
+        </div>
+        <div class="icon">
+          <i class="fa fa-bell-o"></i>
+        </div>
+        <div class="d-flex align-items-center gap-3 profile">
+          <div class="avatar-round">
+            <img src="/dist/assets/images/profile.jpg" alt="">
+          </div>
+          <p class='text-multi text-center'><small>Admin</small><br/>King D</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<section class="main">
+  <div class="main__sidebar px-4">
+    <div class="card bg__primary card__holder border-0 shadow px-4 py-3">
+      <p class="text-multi">
+        <small>Holder</small>
+        <br />
+        Addo A. B
+      </p>
+    </div>
+  
+    <%- include('includes/navigation') -%>
 
-       <div class="">
-        <label for="department name"> Student Name </label>
-        <input type="text" name="student_name" placeholder=" Department ">
-       </div>
+  </div>
+  <div class="main__body">
+    <div class="container">
+      <div class="heading">
+        <p class="">
+          Smart pay- school fees
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="card border-0 shadow px-4 py-2 mb-2">
+            <div class="card-body">
+              <h4 class="card-title text-center py-2">
+                Make Dues payment
+              </h4>
 
-       <div class="">
-        <label for="department name"> Student ID  </label>
-        <input type="text" name="student_id" placeholder=" Department ">
-       </div>
+              <form id="paymentForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email-address" required />
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="tel"  class="form-control" id="amount" required />
+                </div>
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text"  class="form-control" id="first-name" />
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text"  class="form-control" id="last-name" />
+                </div>
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-gray px-6 py-2 mb-2 mt-1" onclick="payWithPaystack()"> Pay </button>
+                </div>
+                </form>
+            
 
+            
+                  <!-- <div class="d-flex justify-content-end">
+            <button type="submit" class='btn btn-gray px-6 py-2 mb-2'>
+              Paym
+            </button>
+          </div> -->
 
-       <div class="">
-        <label for="department name">  Student Level   </label>
-        <input type="text" name="student_level" placeholder=" Department ">
-       </div>
+            </div>
+          </div>
 
+         
 
-       <div class="">
-        <label for="department name">   Amount  </label>
-        <input type="text" name="dues_amount" placeholder=" Department ">
-       </div>
-
-    </form>
-
+        </div>
+      </div><!-- /Row -->
+    </div><!-- /Container -->
+  </div>
+</section>
 
 
 <%- include('includes/footer') -%>
-    
-    

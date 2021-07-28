@@ -1,6 +1,101 @@
+
 <%- include('includes/header') -%>
 
-<h4> Dashboard  </h4>
+
+<header class="header shadow py-4">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="logo">
+        <a href="" class="">
+          <i class="fa fa-cube"></i>Sams
+        </a>
+      </div>
+      <div class="header__right d-flex align-items-center gap-2">
+        <div class="icon">
+          <i class="fa fa-th-large"></i>
+        </div>
+        <div class="icon">
+          <i class="fa fa-bell-o"></i>
+        </div>
+        <div class="d-flex align-items-center gap-3 profile">
+          <div class="avatar-round">
+            <img src="/dist/assets/images/profile.jpg" alt="">
+          </div>
+          <p class='text-multi text-center'><small>Admin</small><br/>King D</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<section class="main">
+  <div class="main__sidebar px-4">
+    <div class="card bg__primary card__holder border-0 shadow px-4 py-3">
+      <p class="text-multi">
+        <small>Holder</small>
+        <br />
+        Addo A. B
+      </p>
+    </div>
+
+    <%- include('includes/navigation') -%>
+
+  </div>
+  <div class="main__body">
+    <div class="container">
+      <div class="heading">
+        <p class="">
+          Smart pay- school fees
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="card border-0 shadow px-4 py-2 mb-2">
+            <div class="card-body">
+              <h4 class="card-title text-center py-2">
+                Please fill out this forms
+              </h4>
+              <form action="" class="form">
+                <div class="form-group mb-3">
+                  <label for="">School</label>
+                  <input type="text" class="form-control">
+                </div>
+                <div class="form-group mb-3">
+                  <label for="">Student Name</label>
+                  <input type="text" class="form-control">
+                </div>
+                <div class="form-group mb-3">
+                  <label for="">Student ID</label>
+                  <input type="text" class="form-control">
+                </div>
+                <div class="form-group mb-3">
+                  <label for="">Programme</label>
+                  <select name="" id="" class="form-control">
+                    <option value="">select programme of choice</option>
+                    <option value="">Computer Science</option>
+                    <option value="">Computer Science</option>
+                  </select>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="">Level</label>
+                  <input type="text" class="form-control">
+                </div>
+                <div class="form-group mb-3">
+                  <label for="">Amount</label>
+                  <input type="text" class="form-control">
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button type="submit" class='btn btn-gray px-6 py-2 mb-2'>
+              Next
+            </button>
+          </div>
+        </div>
+      </div><!-- /Row -->
+    </div><!-- /Container -->
+  </div>
+</section>
 
 
 <%- include('includes/footer') -%>
