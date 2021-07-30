@@ -44,13 +44,23 @@ exports.getAdminMyServices = async (req, res, next) => {
 };
 
 
+// @desc          Delete a single Company
+// @route         www.workport.com/index
+// @access        Private 
+exports.getAdminMyReceipts = async (req, res, next) => {
+  await res.status(200).render("admin/my-receipts", {
+    pageTitle: "My Receipts",
+    path: "/admin/my-receipts"
+  });
+};
+
 
 // @desc          Delete a single Company
 // @route         www.workport.com/index
 // @access        Private
 exports.getAdminMyTranscations = async (req, res, next) => {
   await res.status(200).render("admin/my-transcations", {
-    pageTitle: "Dashboard",
+    pageTitle: "My ",
     path: "/admin/my-transcations",
   });
 };
